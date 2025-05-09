@@ -192,29 +192,24 @@ if st.session_state.page == "operations":
                 msg = f"₹{amount} withdrawn. New balance is ₹{user['balance']}."
                 st.success(msg)
                 speak_text(msg if lang == 'en' else
-                           f"₹{amount} निकासी की गई। नया बैलेंस ₹{user['balance']} है।" if lang == 'hi' else
-                           f"₹{amount} ವಾಪಸ್ ಪಡೆದೆ. ಹೊಸ ಶೇಷ ₹{user['balance']}.", lang)
+                           f"₹{amount} निकाले गए। नया बैलेंस ₹{user['balance']} है।" if lang == 'hi' else
+                           f"₹{amount} ಹಣ ವಾಪಸು ಮಾಡಲಾಗಿದೆ. ಹೊಸ ಶೇಷ ₹{user['balance']} ಆಗಿದೆ.", lang)
 
         elif operation in ["Passbook", "पासबुक", "ಪಾಸ್‌ಬುಕ್"]:
-            df = load_transactions(pin)
-            if df.empty:
-                st.warning("No transactions yet.")
-                speak_text("No transactions available in passbook.", lang)
+            st.subheader("📜 Transaction Passbook")
+            if not transactions.empty:
+                st.dataframe(transactions)
             else:
-                st.success("📚 Passbook:")
-                st.dataframe(df)
-                speak_text("Here is your passbook." if lang == 'en' else
-                           "यह आपका पासबुक है।" if lang == 'hi' else
-                           "ಇದು ನಿಮ್ಮ ಪಾಸ್‌ಬುಕ್.", lang)
+                st.write("No transactions available.")
+            speak_text("Displaying passbook." if lang == 'en' else
+                       "पासबुक दिखा रहा हूँ।" if lang == 'hi' else
+                       "ಪಾಸ್‌ಬುಕ್ ಪ್ರದರ್ಶಿಸಲಾಗುತ್ತಿದೆ.", lang)
 
         elif operation in ["Exit", "बंद", "ಹಾರಿ"]:
-            speak_text("Thank you for using the ATM Voice Assistant." if lang == 'en' else
-                       "एटीएम वॉइस असिस्टेंट का उपयोग करने के लिए धन्यवाद।" if lang == 'hi' else
-                       "ATM ಧ್ವನಿ ಸಹಾಯಕರನ್ನು ಬಳಸಿದಕ್ಕಾಗಿ ಧನ್ಯವಾದಗಳು.", lang)
-            st.info("You have exited the ATM. Thank you!")
-            st.session_state.current_user_pin = None
+            st.session_state.page = "login"
             st.session_state.spoken_pin = ""
-            st.session_state.welcome_shown = False
-            st.session_state.selected_operation = "Balance Enquiry"
-            st.session_state.page = "login"  # Redirect back to login page
-            st.experimental_rerun()  # Reload the page to go back to login screen
+            st.session_state.current_user_pin = None
+            st.experimental_rerun()  # Rerun the app to reset to login page
+
+# ---------------- Final Thoughts ----------------
+# Make sure you have the 'voice_auth' module and 'qr_utils' with required functions for speech recognition, conversion, and QR code generation.
