@@ -26,7 +26,7 @@ ATM-Voice-Assistant/
 
 Getting Started :
 - Clone the repository: git clone https://github.com/sakshik1712/ATM-Voice-Assistant.git
-                        cd ATM-Voice-Assistant
+                        & cd ATM-Voice-Assistant
 - Install dependencies: pip install -r requirements.txt
 - Run the app: streamlit run app.py
 
