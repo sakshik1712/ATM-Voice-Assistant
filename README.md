@@ -18,13 +18,6 @@ Tech Stack
 - **Backend:** Python  
 - **Libraries:** `speechrecognition`, `streamlit`, `qrcode`, `fpdf`, `smtplib`  
 
-📂 Project Structure
-ATM-Voice-Assistant/
-│-- app.py # Main Streamlit app
-│-- utils/ # Helper functions
-│-- reports/ # Generated PDF passbooks
-│-- requirements.txt # Dependencies
-│-- README.md # Project documentation
 
 Getting Started :
 - Clone the repository: git clone https://github.com/sakshik1712/ATM-Voice-Assistant.git
