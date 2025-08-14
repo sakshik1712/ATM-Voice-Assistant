@@ -33,9 +33,9 @@ A **Streamlit-based Voice-Enabled ATM Simulation** that allows users to interact
 Demo:  http://localhost:8501
 
 ## Future Enhancements
-Face recognition login for added security
-Mobile app integration
-Support for more Indian languages
+- Face recognition login for added security
+- Mobile app integration
+- Support for more Indian languages
 
 
 ## License
