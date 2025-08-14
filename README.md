@@ -2,6 +2,8 @@ ATM VOICE ASSISTANT
 
 A **Streamlit-based Voice-Enabled ATM Simulation** that allows users to interact with an ATM using **voice PIN input** in **English, Hindi, and Kannada**. The project demonstrates how AI-powered speech recognition can be applied in financial systems to enhance accessibility and security.
 
+Demo:  http://localhost:8501
+
 🚀 Features
 - 🎙️ **Voice PIN Authentication** – Supports English, Hindi, and Kannada number recognition.  
 - 🔒 **Autofill PIN Entry** – Automatically fills in the PIN when correctly spoken.  
