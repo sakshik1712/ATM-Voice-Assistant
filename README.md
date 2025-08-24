@@ -29,8 +29,7 @@ A **Streamlit-based Voice-Enabled ATM Simulation** that allows users to interact
    cd ATM-Voice-Assistant
    pip install -r requirements.txt
    streamlit run app.py
-
-Demo:  http://localhost:8501
+   
 
 ## Future Enhancements
 - Face recognition login for added security
