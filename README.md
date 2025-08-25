@@ -22,7 +22,7 @@ A **Streamlit-based Voice-Enabled ATM Simulation** that allows users to interact
 
 ---
 
-## ⚡ Getting Started
+## Getting Started
 1. Clone the repository:  
    ```bash
    git clone https://github.com/sakshik1712/ATM-Voice-Assistant.git
